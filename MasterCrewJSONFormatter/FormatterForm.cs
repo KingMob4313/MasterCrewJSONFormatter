@@ -23,17 +23,29 @@ namespace MasterCrewJSONFormatter
             OFD.Filter = "JSON|*.json|All|*.*";
             OFD.FileName = "chat";
             DialogResult result = OFD.ShowDialog();
-
+            List<string> jsonLines = new List<string>();
             if (result == DialogResult.OK)
             {
                 var currentFileName = OFD.FileName;
                 FileNameTextBox.Text = currentFileName;
-                List<string> justChatLines = JsonFile.ProcessJSONFile(OFD.FileName, this);
+                jsonLines = JsonFile.ProcessJSONFile(OFD.FileName, this);
 
 
             }
-            //string allChat = StreamOutLines(justChatLines);
-            //ChatTextBox.Text = allChat;
+            string allJson = StreamOutLines(jsonLines);
+            JsonTextBox.Text = allJson;
+        }
+
+        private string StreamOutLines(List<string> jsonLines)
+        {
+            string outputLines = string.Empty;
+            foreach (string line in jsonLines)
+            {
+                outputLines = outputLines + line;
+            }
+            return outputLines;
         }
     }
+
+
 }

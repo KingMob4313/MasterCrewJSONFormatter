@@ -31,7 +31,6 @@ namespace MasterCrewJSONFormatter
                 currentEncoding = reader.CurrentEncoding;
             }
             return currentEncoding;
-
         }
 
         private static List<string> ProcessJSONLines(List<string> allChatText, FormatterForm currentWindow)
@@ -57,12 +56,13 @@ namespace MasterCrewJSONFormatter
             if (personId != "-1")
             {
                 string replacementJson = "   \"" + personId + "\":{";
-                newLine = line.Replace(replacementJson, "{\"PersonId\":\"" + personId + "\"");
+                newLine = line.Replace(replacementJson, "   {\r\n      \"PersonId\":\"" + personId + "\"");
                 return newLine;
             }
             else
-            { return line; }
-
+            {
+                return line;
+            }
         }
 
         private static string getLineId(string line)
@@ -79,7 +79,6 @@ namespace MasterCrewJSONFormatter
             {
                 return "-1";
             }
-
         }
     }
 }

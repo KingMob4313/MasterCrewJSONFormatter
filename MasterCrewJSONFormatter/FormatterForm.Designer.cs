@@ -30,6 +30,7 @@
         {
             this.OpenFileButton = new System.Windows.Forms.Button();
             this.FileNameTextBox = new System.Windows.Forms.TextBox();
+            this.JsonTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // OpenFileButton
@@ -50,11 +51,20 @@
             this.FileNameTextBox.Size = new System.Drawing.Size(438, 20);
             this.FileNameTextBox.TabIndex = 1;
             // 
+            // JsonTextBox
+            // 
+            this.JsonTextBox.Location = new System.Drawing.Point(12, 46);
+            this.JsonTextBox.Multiline = true;
+            this.JsonTextBox.Name = "JsonTextBox";
+            this.JsonTextBox.Size = new System.Drawing.Size(776, 392);
+            this.JsonTextBox.TabIndex = 2;
+            // 
             // FormatterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.JsonTextBox);
             this.Controls.Add(this.FileNameTextBox);
             this.Controls.Add(this.OpenFileButton);
             this.Name = "FormatterForm";
@@ -68,6 +78,7 @@
 
         private System.Windows.Forms.Button OpenFileButton;
         private System.Windows.Forms.TextBox FileNameTextBox;
+        private System.Windows.Forms.TextBox JsonTextBox;
     }
 }
 
